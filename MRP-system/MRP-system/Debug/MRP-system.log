@@ -1,0 +1,6 @@
+﻿  main.cpp
+  Composite.cpp
+h:\c++\1 master\architecture\mrp-system\mrp-system\mrp-system\composite.cpp(24): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  MRP-system.vcxproj -> H:\C++\1 master\architecture\MRP-system\MRP-system\Debug\MRP-system.exe
+  MRP-system.vcxproj -> H:\C++\1 master\architecture\MRP-system\MRP-system\Debug\MRP-system.pdb (Partial PDB)

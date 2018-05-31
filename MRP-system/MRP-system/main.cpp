@@ -4,6 +4,8 @@
 #include "Material.h"
 #include "Composite.h"
 #include "Component.h"
+#include "ComponentDirector.h"
+#include "ConcreteComponentBuilder.h"
 
 using namespace std;
 
@@ -11,18 +13,12 @@ int main() {
 	setlocale(LC_ALL, "");
 	cout << "Hello from MRP-system" << endl;
 
-	shared_ptr<Component> doorChipboard = make_shared<Material>("Дверца ДСП");
-	shared_ptr<Component> veener = make_shared<Material>("Шпон");
-	shared_ptr<Component> handle = make_shared<Material>("Ручка");
-	shared_ptr<Component> hinge = make_shared<Material>("Петля");
+	ComponentDirector director;
+	shared_ptr<ConcreteComponentBuilder> builder = make_shared<ConcreteComponentBuilder>();
+	shared_ptr<Component> component = director.create(builder, "1.txt");
 
-	shared_ptr<Component> door = make_shared<Composite>("Дверца", 5);
-	door->addPart(doorChipboard, 1);
-	door->addPart(veener, 1);
-	door->addPart(handle, 1);
-	door->addPart(hinge, 2);
+	cout << component->toString() << endl;
 
-	cout << door->toString() << endl;
 	system("pause");
 	return 0;
 }
